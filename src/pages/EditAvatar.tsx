@@ -33,7 +33,7 @@ const EditAvatar = () => {
     // Fetch user data from backend
     const fetchUserData = async () => {
       try {
-        const response = await fetch('/api/v1/user/current-user', {
+        const response = await fetch('ttps://ranksetgoa-app-backend.onrender.com/api/v1/user/current-user', {
           method: 'POST',
           credentials: 'include',
         });
@@ -118,7 +118,7 @@ const EditAvatar = () => {
       const formData = new FormData();
       formData.append('avatar', selectedFile);
 
-      const response = await fetch('/api/v1/user/avatar', {
+      const response = await fetch('ttps://ranksetgoa-app-backend.onrender.com/api/v1/user/avatar', {
         method: 'PATCH',
         credentials: 'include',
         body: formData,

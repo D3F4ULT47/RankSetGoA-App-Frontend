@@ -83,7 +83,7 @@ const ChangePassword = () => {
     setIsLoading(true);
 
     try {
-      const response = await fetch('/api/v1/user/change-password', {
+      const response = await fetch('ttps://ranksetgoa-app-backend.onrender.com/api/v1/user/change-password', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',

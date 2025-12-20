@@ -94,7 +94,7 @@ const Auth = () => {
 
     try {
       if (mode === "register") {
-        const res = await fetch("/api/v1/user/register", {
+        const res = await fetch("ttps://ranksetgoa-app-backend.onrender.com/api/v1/user/register", {
           method: "POST",
           headers: { "Content-Type": "application/json" },
           body: JSON.stringify({
@@ -163,7 +163,7 @@ const Auth = () => {
 
       // Sign-in logic
       if (mode === "signin") {
-        const res = await fetch("/api/v1/user/login", {
+        const res = await fetch("ttps://ranksetgoa-app-backend.onrender.com/api/v1/user/login", {
           method: "POST",
           headers: { "Content-Type": "application/json" },
           credentials: "include",
