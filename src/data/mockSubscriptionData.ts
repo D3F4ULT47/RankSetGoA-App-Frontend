@@ -1,0 +1,198 @@
+import { Batch, Mentor, BatchFeature } from '@/types/subscription';
+
+export const mockMentors: Mentor[] = [
+  {
+    id: '1',
+    name: 'Rahul Sharma',
+    photo: '',
+    college: 'IIT Bombay',
+    branch: 'Computer Science',
+    year: '2023 Graduate',
+    studentsGuided: 250,
+    verified: true,
+  },
+  {
+    id: '2',
+    name: 'Priya Patel',
+    photo: '',
+    college: 'IIT Delhi',
+    branch: 'Electrical Engineering',
+    year: '4th Year',
+    studentsGuided: 180,
+    verified: true,
+  },
+  {
+    id: '3',
+    name: 'Amit Kumar',
+    photo: '',
+    college: 'NIT Trichy',
+    branch: 'Mechanical Engineering',
+    year: '2022 Graduate',
+    studentsGuided: 320,
+    verified: true,
+  },
+  {
+    id: '4',
+    name: 'Sneha Reddy',
+    photo: '',
+    college: 'IIT Madras',
+    branch: 'Electronics & Communication',
+    year: '3rd Year',
+    studentsGuided: 150,
+    verified: true,
+  },
+  {
+    id: '5',
+    name: 'Vikash Singh',
+    photo: '',
+    college: 'NIT Warangal',
+    branch: 'Computer Science',
+    year: '2023 Graduate',
+    studentsGuided: 200,
+    verified: true,
+  },
+  {
+    id: '6',
+    name: 'Ananya Gupta',
+    photo: '',
+    college: 'IIIT Hyderabad',
+    branch: 'Computer Science',
+    year: '4th Year',
+    studentsGuided: 120,
+    verified: true,
+  },
+];
+
+export const mockBatches: Batch[] = [
+  {
+    id: 'elite',
+    name: 'JoSAA Mentorship Batch – Elite',
+    tag: 'ONLINE',
+    urgencyTag: 'Only 20 Seats Left',
+    description: 'Premium personalised JoSAA counselling with IIT mentors. Get 1-on-1 dedicated guidance throughout the counselling process.',
+    batchStrength: 50,
+    seatsRemaining: 20,
+    highlights: [
+      'Live 1-on-1 mentorship sessions',
+      'Dedicated IIT mentor assigned',
+      'Priority choice filling guidance',
+      '24/7 WhatsApp support',
+      'Real college & branch insights',
+      'Document verification help',
+    ],
+    duration: 'JoSAA Counselling Period',
+    originalPrice: 1999,
+    discountedPrice: 999,
+    mentors: [mockMentors[0], mockMentors[1], mockMentors[3]],
+  },
+  {
+    id: 'pro',
+    name: 'JoSAA Mentorship Batch – Pro',
+    tag: 'ONLINE',
+    urgencyTag: 'Few Seats Remaining',
+    description: 'Personalised JoSAA counselling with IIT & NIT mentors. Perfect balance of guidance and affordability.',
+    batchStrength: 100,
+    seatsRemaining: 35,
+    highlights: [
+      'Live group mentorship sessions',
+      'Dedicated personal mentor',
+      'Choice filling & preference guidance',
+      'WhatsApp-based doubt support',
+      'Real college & branch insights',
+    ],
+    duration: 'JoSAA Counselling Period',
+    originalPrice: 1299,
+    discountedPrice: 699,
+    mentors: [mockMentors[2], mockMentors[4], mockMentors[5]],
+  },
+  {
+    id: 'starter',
+    name: 'JoSAA Mentorship Batch – Starter',
+    tag: 'ONLINE',
+    urgencyTag: 'Limited Seats Available',
+    description: 'Essential JoSAA guidance for students who need basic counselling support and direction.',
+    batchStrength: 200,
+    seatsRemaining: 80,
+    highlights: [
+      'Weekly group mentorship sessions',
+      'Choice filling basics',
+      'WhatsApp group support',
+      'General counselling guidance',
+    ],
+    duration: 'JoSAA Counselling Period',
+    originalPrice: 799,
+    discountedPrice: 399,
+    mentors: [mockMentors[4], mockMentors[5]],
+  },
+];
+
+export const batchFeatures: BatchFeature[] = [
+  {
+    title: 'Live JoSAA Counselling Sessions',
+    description: 'Interactive live sessions covering all aspects of JoSAA counselling process',
+    icon: 'video',
+  },
+  {
+    title: 'Choice Filling Strategy',
+    description: 'Expert guidance on optimizing your preference list for best outcomes',
+    icon: 'list',
+  },
+  {
+    title: 'Branch vs College Decision',
+    description: 'Data-driven insights to help you make the right choice',
+    icon: 'scale',
+  },
+  {
+    title: 'Document Verification',
+    description: 'Step-by-step guidance for document verification process',
+    icon: 'file',
+  },
+  {
+    title: 'Phase-wise Updates',
+    description: 'Real-time updates and strategy adjustments for each counselling round',
+    icon: 'refresh',
+  },
+  {
+    title: 'Personal Mentor',
+    description: 'Dedicated mentor assigned for personalized guidance',
+    icon: 'user',
+  },
+  {
+    title: 'WhatsApp Support',
+    description: 'Quick doubt resolution via WhatsApp for all your queries',
+    icon: 'message',
+  },
+];
+
+export const howItWorks = [
+  {
+    step: 1,
+    title: 'Enroll in the Batch',
+    description: 'Choose your preferred batch and complete the enrollment',
+  },
+  {
+    step: 2,
+    title: 'Seat Reserved Instantly',
+    description: 'Your seat is confirmed immediately after payment',
+  },
+  {
+    step: 3,
+    title: 'Personal Mentor Assigned',
+    description: 'Get matched with an IIT/NIT mentor based on your preferences',
+  },
+  {
+    step: 4,
+    title: 'Attend Live Sessions',
+    description: 'Join interactive mentorship sessions and learn from experts',
+  },
+  {
+    step: 5,
+    title: '1-on-1 Guidance',
+    description: 'Get personalized advice via WhatsApp and calls',
+  },
+  {
+    step: 6,
+    title: 'Finalize Your Choice',
+    description: 'Make confident college & branch decisions with expert backing',
+  },
+];
