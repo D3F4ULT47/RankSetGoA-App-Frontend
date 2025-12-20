@@ -35,7 +35,7 @@ const Profile = () => {
     // Fetch user data from backend
     const fetchUserData = async () => {
       try {
-        const response = await fetch('ttps://ranksetgoa-app-backend.onrender.com/api/v1/user/current-user', {
+        const response = await fetch('https://ranksetgoa-app-backend.onrender.com/api/v1/user/current-user', {
           method: 'POST',
           credentials: 'include', // Include cookies for authentication
         });
@@ -168,7 +168,7 @@ const Profile = () => {
                         }
                         setIsSavingUsername(true);
                         try {
-                          const response = await fetch('ttps://ranksetgoa-app-backend.onrender.com/api/v1/user/update-account', {
+                          const response = await fetch('https://ranksetgoa-app-backend.onrender.com/api/v1/user/update-account', {
                             method: 'PATCH',
                             headers: {
                               'Content-Type': 'application/json',
@@ -296,7 +296,7 @@ const Profile = () => {
                 variant="outline"
                 onClick={async () => {
                   try {
-                    await fetch('ttps://ranksetgoa-app-backend.onrender.com/api/v1/user/logout', {
+                    await fetch('https://ranksetgoa-app-backend.onrender.com/api/v1/user/logout', {
                       method: 'POST',
                       credentials: 'include',
                     });
