@@ -150,6 +150,8 @@ const Auth = () => {
         }
 
         // ✅ SUCCESS
+        const data = await res.json()
+        console.log(data)
         toast({
           title: `Welcome ${formData.fullName} to RankSetGo`,
           description: "Your account has been created successfully",
@@ -186,6 +188,7 @@ const Auth = () => {
         }
 
         const data = await res.json();
+        console.log(data)
 
         // Set user as logged in after successful login
         setUserLoggedIn(true);
