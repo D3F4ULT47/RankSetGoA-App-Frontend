@@ -299,7 +299,9 @@ const Profile = () => {
                     await fetch('https://ranksetgoa-app-backend.onrender.com/api/v1/user/logout', {
                       method: 'POST',
                       credentials: 'include',
-                    });
+                    })
+                    .then(res =>res.json())
+                    .then((data) =>console.log(data));
                   } catch (error) {
                     console.error('Logout error:', error);
                   }
