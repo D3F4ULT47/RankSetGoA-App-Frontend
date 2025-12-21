@@ -134,7 +134,7 @@ const Community = () => {
               >
                 <User className="h-5 w-5" />
               </Button>
-              {isLoggedIn && (
+              {/* {isLoggedIn && (
                 <DropdownMenu>
                   <DropdownMenuTrigger asChild>
                     <Button variant="ghost" size="icon" className="rounded-full">
@@ -163,7 +163,7 @@ const Community = () => {
                     </DropdownMenuItem>
                   </DropdownMenuContent>
                 </DropdownMenu>
-              )}
+              )} */}
             </div>
             {/* Back Button */}
             <Button variant="outline" size="sm" onClick={() => navigate('/')} className="gap-2">

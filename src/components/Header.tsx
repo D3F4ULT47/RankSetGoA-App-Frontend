@@ -119,7 +119,7 @@ const Header = ({ activeTab = 'predictor' }: HeaderProps) => {
               <DropdownMenuContent align="end" className="w-48">
                 <DropdownMenuItem onClick={async () => { 
                   try {
-                    await fetch('/api/v1/user/logout', {
+                    await fetch('https://ranksetgoa-app-backend.onrender.com/api/v1/user/logout', {
                       method: 'POST',
                       credentials: 'include',
                     });
