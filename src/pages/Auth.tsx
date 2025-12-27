@@ -23,6 +23,7 @@ const Auth = () => {
     email: "",
     password: "",
     confirmPassword: "",
+    username: ""
   });
 
   const [errors, setErrors] = useState({
@@ -30,6 +31,7 @@ const Auth = () => {
     email: "",
     password: "",
     confirmPassword: "",
+    username: ""
   });
 
   const validateEmail = (email: string) => {
@@ -43,10 +45,16 @@ const Auth = () => {
       email: "",
       password: "",
       confirmPassword: "",
+      username: ""
+
     };
 
     if (mode === "register" && !formData.fullName.trim()) {
       newErrors.fullName = "Full name is required";
+    }
+
+    if (mode === "register" && !formData.username.trim()) {
+      newErrors.username = "Username is required";
     }
 
     if (!formData.email.trim()) {
@@ -79,6 +87,7 @@ const Auth = () => {
     }
     return (
       formData.fullName.trim() &&
+      formData.username.trim() &&
       formData.email.trim() &&
       formData.password &&
       formData.confirmPassword
@@ -87,9 +96,7 @@ const Auth = () => {
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-
     if (!validateForm()) return;
-
     setIsLoading(true);
 
     try {
@@ -101,6 +108,7 @@ const Auth = () => {
             fullName: formData.fullName,
             email: formData.email,
             password: formData.password,
+            username:formData.username
           }),
         });
 
@@ -119,7 +127,7 @@ const Auth = () => {
           console.error("Backend Error:", errorMessage);
 
 
-          // ✅ USER EXISTS CASE
+          // User EXISTS CASE
           if (errorMessage.toLowerCase().includes("exists")) {
             toast({
               title: `User with ${formData.email} email already exists, You need to SignIn `,
@@ -128,19 +136,21 @@ const Auth = () => {
             });
 
 
-            // 🔑 IMPORTANT FIXES
-            setMode("signin");          // switch UI
-            setErrors({                 // clear register errors
+            //  IMPORTANT FIXES
+            setMode("signin");          //// switch UI
+            setErrors({                 //// clear register errors
               fullName: "",
               email: "",
               password: "",
               confirmPassword: "",
+              username:""
             });
             setFormData(prev => ({
               ...prev,
               fullName: "",
               password: "",
               confirmPassword: "",
+               username:""
             }));
 
             return; // stop further execution
@@ -229,8 +239,8 @@ const Auth = () => {
 
   const toggleMode = () => {
     setMode(mode === "signin" ? "register" : "signin");
-    setErrors({ fullName: "", email: "", password: "", confirmPassword: "" });
-    setFormData({ fullName: "", email: "", password: "", confirmPassword: "" });
+    setErrors({ fullName: "", email: "", password: "", confirmPassword: "", username:"" });
+    setFormData({ fullName: "", email: "", password: "", confirmPassword: "", username:"" });
   };
 
   return (
@@ -328,6 +338,27 @@ const Auth = () => {
                   </div>
                   {errors.fullName && (
                     <p className="text-sm text-destructive">{errors.fullName}</p>
+                  )}
+                </div>
+              )}
+
+              {mode === "register" && (
+                <div className="space-y-2">
+                  <Label htmlFor="username">Username</Label>
+                  <div className="relative">
+                    <User className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-muted-foreground" />
+                    <Input
+                      id="username"
+                      name="username"
+                      type="text"
+                      placeholder="Enter your username"
+                      className="pl-10"
+                      value={formData.username}
+                      onChange={(e) => handleInputChange("username", e.target.value)}
+                    />
+                  </div>
+                  {errors.username && (
+                    <p className="text-sm text-destructive">{errors.username}</p>
                   )}
                 </div>
               )}

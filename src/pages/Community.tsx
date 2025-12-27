@@ -103,11 +103,11 @@ const Community = () => {
                 <DropdownMenuContent align="end" className="w-48">
                   <DropdownMenuItem onClick={async () => { 
                     try {
-                     const res= await fetch('https://ranksetgoa-app-backend.onrender.com/api/v1/user/logout', {
+                     await fetch('https://ranksetgoa-app-backend.onrender.com/api/v1/user/logout', {
                         method: 'POST',
                         credentials: 'include',
                       })
-                      .then(res =>res.json())
+                      .then(res => res.json())
                       .then((data) =>console.log(data));
                     } catch (error) {
                       console.error('Logout error:', error);
