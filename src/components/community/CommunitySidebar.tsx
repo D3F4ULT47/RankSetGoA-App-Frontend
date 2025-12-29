@@ -36,7 +36,7 @@ const CommunitySidebar = ({ activeChannel, onChannelSelect }: CommunitySidebarPr
 
     const fetchUserData = async () => {
       try {
-        const response = await fetch('/api/v1/user/current-user', {
+        const response = await fetch('https://ranksetgoa-app-backend.onrender.com/api/v1/user/current-user', {
           method: 'POST',
           credentials: 'include',
         });
