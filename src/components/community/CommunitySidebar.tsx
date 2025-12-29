@@ -232,7 +232,7 @@ const CommunitySidebar = ({ activeChannel, onChannelSelect }: CommunitySidebarPr
                     <Button
                       size="sm"
                       variant="ghost"
-                      className="h-6 w-6 p-0 opacity-0 group-hover:opacity-100 transition-opacity"
+                      className="h-6 w-6 p-0 opacity-100 group-hover:opacity-100 transition-opacity"
                       onClick={() => {
                         setUsernameValue(username || '');
                         setIsEditingUsername(true);
