@@ -171,7 +171,7 @@ const CommunitySidebar = ({ activeChannel, onChannelSelect }: CommunitySidebarPr
                         }
                         setIsSavingUsername(true);
                         try {
-                          const response = await fetch('/api/v1/user/update-account', {
+                          const response = await fetch('https://ranksetgoa-app-backend.onrender.com/api/v1/user/update-account', {
                             method: 'PATCH',
                             headers: {
                               'Content-Type': 'application/json',
