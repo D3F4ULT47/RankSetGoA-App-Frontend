@@ -159,7 +159,7 @@ const Auth = () => {
           throw new Error(errorMessage);
         }
 
-        // ✅ SUCCESS
+        // SUCCESS
         const data = await res.json()
         console.log(data)
         toast({
@@ -168,8 +168,9 @@ const Auth = () => {
         });
 
         // Set user as logged in after successful registration
-        setUserLoggedIn(true);
-        navigate("/");
+        setUserLoggedIn(false);
+        setMode("signin");
+        navigate("/auth");
         return;
       }
 
@@ -200,7 +201,7 @@ const Auth = () => {
         const data = await res.json();
         console.log(data)
 
-        // Set user as logged in after successful login
+        // i am Setting user as logged in after successful login
         setUserLoggedIn(true);
 
         toast({
@@ -208,7 +209,7 @@ const Auth = () => {
           description: data?.message || "You have successfully logged in",
         });
 
-        // Check if there's a redirect path
+        // Checking if there's a redirect path
         const redirectPath = localStorage.getItem('ranksetgo_redirect') || '/';
         localStorage.removeItem('ranksetgo_redirect');
         navigate(redirectPath);
